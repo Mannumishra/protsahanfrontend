@@ -1,0 +1,29 @@
+table{
+background-color: #f8f7f5;
+}
+  
+  .table-bordered>:not(caption)>* {
+    border-width: var(--bs-border-width)!important;
+}
+.tableheadwidth{
+    width: 140px;
+}
+th{
+    padding: 1rem !important;
+}
+td{
+    padding: 1rem !important;
+    color: gray;
+}
+.contain {
+    display: inline-block;
+    overflow: hidden;            
+  }
+  .contain img {
+    display: block;
+    transition: transform 0.5s; 
+  }
+  .contain:hover img {
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
+  }
