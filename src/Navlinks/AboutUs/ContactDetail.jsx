@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const ContactDetail = () => {
   const [formData, setFormData] = useState({
@@ -26,10 +27,12 @@ const ContactDetail = () => {
     // console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/contact",
+        "https://protsahan.onrender.com/api/contact",
         formData
       );
-      console.log("Data submitted successfully:", response.data);
+      if(response.status===200){
+        toast.success("Query send successfully")
+      }
     } catch (error) {
       console.error("Error submitting data:", error);
     }

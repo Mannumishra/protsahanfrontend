@@ -12,7 +12,7 @@ const EmployeeDetail = () => {
 
   const getApiData = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/api/job");
+      let res = await axios.get("https://protsahan.onrender.com/api/job");
       console.log(res);
       setData(res.data.data);
     } catch (error) {
@@ -21,7 +21,7 @@ const EmployeeDetail = () => {
   };
   const deleteItem = async (_id) => {
     try {
-      let res = await axios.delete("http://localhost:8000/api/job/" + _id)
+      let res = await axios.delete("https://protsahan.onrender.com/api/job/" + _id)
       getApiData()
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ const EmployeeDetail = () => {
 const sendDataEmp = async(e)=>{
   e.preventDefault()
   try {
-    let res = await axios.post("http://localhost:8000/api/emp" ,formData)
+    let res = await axios.post("https://protsahan.onrender.com/api/emp" ,formData)
     console.log(res)
   } catch (error) {
     console.log(error)

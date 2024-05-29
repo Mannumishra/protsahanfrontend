@@ -40,7 +40,7 @@ const JoinUs = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await axios.post("http://localhost:8000/api/join", data)
+      let res = await axios.post("https://protsahan.onrender.com/api/join", data)
       console.log(res)
     } catch (error) {
       console.log(error)

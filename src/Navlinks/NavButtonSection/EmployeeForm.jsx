@@ -31,7 +31,7 @@ const EmployeeForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/job",
+        "https://protsahan.onrender.com/api/job",
         formData
       );
       if(response.status===200){

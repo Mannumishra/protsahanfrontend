@@ -30,7 +30,7 @@ const DonateNow = () => {
   const formSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:8000/api/volunteer', data)
+      const response = await axios.post('https://protsahan.onrender.com/api/volunteer', data)
       if(response.status===200){
         toast.success("Record Send Successfully")
       }
