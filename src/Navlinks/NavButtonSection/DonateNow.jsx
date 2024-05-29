@@ -1,39 +1,39 @@
 import axios from "axios";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const DonateNow = () => {
   const [data, setData] = useState({
-    donation:'',
-    sirName:'',
-    firstName:'',
-    lastName:'',
-    date:'',
-    pen:'',
-    email:'',
-    number:'',
-    address:'',
-    country:'',
-    state:'',
-    city:'',
-    pinCode:'',
-    citizenship:'',
-    helpMessage:''
+    donation: '',
+    sirName: '',
+    firstName: '',
+    lastName: '',
+    dob: '',
+    panNo: '',
+    email: '',
+    mobile: '',
+    address: '',
+    country: '',
+    state: '',
+    city: '',
+    pinCode: '',
+    citizenship: '',
+    helpMessage: ''
   })
-  const formField=(e)=>{
-    const {name , value} = e.target; 
+  const formField = (e) => {
+    const { name, value } = e.target;
     setData({
       ...data,
-      [name]:value
+      [name]: value
     })
-    console.log(name.value)
   }
-  const formSubmit=async(e)=>{
-    e.preventDefault();
-    // console.log("deta submited", e.target.value);
-
+  const formSubmit = async (e) => {
+    e.preventDefault()
     try {
-      const response = await axios.post('',setData)
-      console.log("Data submitted successfully:", response.data);
+      const response = await axios.post('http://localhost:8000/api/volunteer', data)
+      if(response.status===200){
+        toast.success("Record Send Successfully")
+      }
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +43,7 @@ const DonateNow = () => {
       <div className="container Allpagemargin">
         <div
           className="mt-5 mb-5"
-          style={{boxShadow:'0px 0px 37px 0px lightgray', padding: "2rem" }}
+          style={{ boxShadow: '0px 0px 37px 0px lightgray', padding: "2rem" }}
         >
           <h1 style={{ color: "#00C851", marginBottom: "2rem" }}>
             MEMBERSHIP FORM
@@ -52,9 +52,9 @@ const DonateNow = () => {
           <form onSubmit={formSubmit} action="">
             <div className="row" style={{ lineHeight: "34px" }}>
               <div className="col-md-12">
-              <h4 style={{ color: "#ff4444", marginBottom: "2rem" }}>
-                <u>Select Type of Donation</u>
-              </h4>
+                <h4 style={{ color: "#ff4444", marginBottom: "2rem" }}>
+                  <u>Select Type of Donation</u>
+                </h4>
                 <div>
                   <select onChange={formField} style={{ width: "100%" }} name="donation" id="">
                     <option value="Select">Select</option>
@@ -107,7 +107,7 @@ const DonateNow = () => {
                 <div className="row">
                   <label htmlFor="">Date Of Birth</label>
                   <div className="col-md-12">
-                    <input onChange={formField} className="form-control" name="date" type="date" />
+                    <input onChange={formField} className="form-control" name="dob" type="date" />
                   </div>
                 </div>
               </div>
@@ -116,9 +116,9 @@ const DonateNow = () => {
                 <div>
                   <input onChange={formField}
                     style={{ width: "100%" }}
-                    type="number"
+                    type="text"
                     placeholder="000 000 0000"
-                    name="pen"
+                    name="panNo"
                   />
                 </div>
               </div>
@@ -129,14 +129,16 @@ const DonateNow = () => {
                   style={{ width: "100%" }}
                   type="email"
                   placeholder="test@gmail.com"
+                  name="email"
                 />
               </div>
               <div className="col-md-6">
                 <label htmlFor="">Mobile No.</label>
                 <input onChange={formField}
                   style={{ width: "100%" }}
-                  type="number"
+                  type="text"
                   placeholder="0000 000 000"
+                  name="mobile"
                 />
               </div>
             </div>
@@ -151,7 +153,7 @@ const DonateNow = () => {
               <div style={{ lineHeight: "33px" }} className="row">
                 <div className="col-md-6">
                   <label htmlFor="">Address</label>
-                  <textarea rows="4" cols="65" name="address" id=""></textarea>
+                  <textarea rows="4" cols="65" name="address" id="" onChange={formField}></textarea>
                 </div>
                 <div className="col-md-6">
                   <label for="country">Choose a country:</label>
@@ -219,17 +221,17 @@ const DonateNow = () => {
                   <label htmlFor="">
                     How Can I Help You <b>Prothsahan Team</b>
                   </label>
-                  <textarea cols="67" rows="3" name="helpMessage" id=""></textarea>
+                  <textarea cols="67" rows="3" name="helpMessage" id="" onChange={formField}></textarea>
                 </div>
                 <div className="col-md-12 text-center mt-3">
-                    <p style={{background:'#ff4444', padding:'1rem', color:'white', fontSize:'20px'}}>
+                  <p style={{ background: '#ff4444', padding: '1rem', color: 'white', fontSize: '20px' }}>
                     I would like  50% tax deduction on this donation.
-                    </p>
-                    <h5 className="mb-3">
+                  </p>
+                  <h5 className="mb-3">
                     THANK YOU FOR CHOOSING TO DONATE TO PROTHSAHAN TEAM.
-                    </h5>
-                    <hr className="mb-5" />
-                    <button style={{ width: "40%", padding:'1rem 4rem', background:'#ff4444'}} className="btn btn-danger">Submit</button>
+                  </h5>
+                  <hr className="mb-5" />
+                  <button style={{ width: "40%", padding: '1rem 4rem', background: '#ff4444' }} className="btn btn-danger">Submit</button>
                 </div>
               </div>
             </div>

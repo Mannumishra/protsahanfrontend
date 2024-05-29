@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "../../Navlinks/NavButtonSection/navbutton.css";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const EmployeeForm = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     jobpost: "",
     qualification: "",
@@ -28,10 +31,13 @@ const EmployeeForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://protsahan.onrender.com/api/job",
+        "http://localhost:8000/api/job",
         formData
       );
-      console.log("Data submitted successfully:", response.data);
+      if(response.status===200){
+        toast.success("Job Post Successfully")
+        navigate("/employeDetail")
+      }
     } catch (error) {
       console.error("Error submitting data:", error);
     }

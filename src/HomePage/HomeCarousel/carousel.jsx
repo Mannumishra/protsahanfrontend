@@ -15,7 +15,7 @@ const carousel = () => {
     <div class="carousel-item active">
       <div className=''>
       <img src={img1} class="d-block w-100" alt="..." />
-        <h1>hello prothsahan</h1>
+        {/* <h1>hello prothsahan</h1> */}
       </div>
     </div>
     <div class="carousel-item">

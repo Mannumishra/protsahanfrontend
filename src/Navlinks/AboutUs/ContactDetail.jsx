@@ -23,10 +23,10 @@ const ContactDetail = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     try {
       const response = await axios.post(
-        "https://protsahan.onrender.com/api/contact",
+        "http://localhost:8000/api/contact",
         formData
       );
       console.log("Data submitted successfully:", response.data);

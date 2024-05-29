@@ -1,8 +1,8 @@
 import React from "react";
+import '../src/App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import toast, { Toaster } from 'react-hot-toast';
 import Header from "./HomePage/Header/header";
 import AimAndObjective from "./Navlinks/AboutUs/AimAndObjective";
 import OurTeam from "./Navlinks/AboutUs/OurTeam";
@@ -27,7 +27,7 @@ import EmployeeDetail from "./Navlinks/NavButtonSection/EmployeeDetail";
 import ListAndDonar from "./HomePage/Footer/ListAndDonar";
 import Global_warming from "./HomePage/CardCarousel/Global_warming";
 import PhotoDetail from "./Navlinks/NewsViews/PhotoDetail";
-import '../src/App.css'
+import Editjobdetails from "./Navlinks/NavButtonSection/Editjobdetails";
 const App = () => {
   return (
     <>
@@ -41,10 +41,7 @@ const App = () => {
           <Route path="/presedentMessage" element={<PresedentMessage />} />
           <Route path="/about-Global-Warming" element={<GlobalWarming />} />
           <Route path="/about-Organ-Donating" element={<OrganDonating />} />
-          <Route
-            path="/health-care-awareness"
-            element={<HealthCareAwareness />}
-          />
+          <Route path="/health-care-awareness" element={<HealthCareAwareness />} />
           <Route path="/consumer-awareness" element={<ConsumerAwareness />} />
           <Route path="/press-release" element={<PressRelease />} />
           <Route path="/photo" element={<PhotoGallery />} />
@@ -57,12 +54,14 @@ const App = () => {
           <Route path="/donate" element={<DonateNow />} />
           <Route path="/employeForm" element={<EmployeeForm />} />
           <Route path="/employeDetail" element={<EmployeeDetail />} />
+          <Route path="/editdetail/:_id" element={<Editjobdetails />} />
           <Route path="/donar" element={<ListAndDonar />} />
           <Route path="/global-warming" element={<Global_warming />} />
           <Route path="/Products-Info/:id" element={<PhotoDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
+      <Toaster />
     </>
   );
 };
