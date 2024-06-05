@@ -31,12 +31,12 @@ const EmployeeForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://protsahan.onrender.com/api/job",
+        "https://api.prothsahanteam.org/api/job",
         formData
       );
       if(response.status===200){
         toast.success("Job Post Successfully")
-        navigate("/employeDetail")
+        // navigate("/employeDetail")
       }
     } catch (error) {
       console.error("Error submitting data:", error);
@@ -46,9 +46,7 @@ const EmployeeForm = () => {
     <>
       <div className="container Allpagemargin">
         <div
-          className="mt-5 mb-5"
-          style={{ boxShadow: "0px 0px 37px 0px lightgray", padding: "2rem" }}
-        >
+          className="mt-5 mb-5 jobpost">
           <h1 style={{ color: "#00C851", marginBottom: "2rem" }}>Post Job</h1>
 
           <form onSubmit={handleSubmit} action="">

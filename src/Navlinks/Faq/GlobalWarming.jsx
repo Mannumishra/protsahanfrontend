@@ -1,5 +1,6 @@
 import React from "react";
 import '../../Navlinks/Faq/faq.css'
+import { Link } from "react-router-dom";
 const GlobalWarming = () => {
   return (
     <div>
@@ -16,10 +17,10 @@ const GlobalWarming = () => {
             <h3 style={{ color: "rgb(0, 200, 81)" }}>ABOUT GLOBAL WARMING</h3>
           </div>
           <p>
-            We{" "}
-            <a style={{ textDecoration: "none" }} href="#">
-              Prothsahan TEAM{" "}
-            </a>{" "}
+            We
+            <Link style={{ textDecoration: "none" }} to="#">
+              Prothsahan TEAM
+            </Link>
             a Delhi based NGO, is starting a project for Environment awareness
             among the young generation through The broad aim of the Area is to
             inculcate among the children, a sense of respect and responsibility

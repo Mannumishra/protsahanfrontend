@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Navbar/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../images/logo1.png";
 // import yuth from '../../HomePage/images/yemp.jpg'
 import yuth from "../../HomePage/images/yuth.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   const click = () => {
     setOpen(!open);
   };
+
+  const closeNav = () => {
+    setOpen(false);
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+
   return (
     <>
       <nav
@@ -22,49 +32,49 @@ const Navbar = () => {
           position: "fixed",
           padding: "1rem 1rem",
         }}
-        class="navbar navbar-expand-lg"
+        className="navbar navbar-expand-lg"
       >
         <div className="navmain">
-          <div style={{textAlign:'center', display:'flex'}}>
-          <Link className="logo" to={"/"}>
-            <img width="115%" src={logo} alt="logo" />
-          </Link>
-            {/* <h2 style={{color:'white', fontWeight:'500', margin:'0'}}>प्रोत्साहन टीम</h2> */}
+          <div className="divmain" style={{textAlign:'center', display:'flex'}}>
+            <Link className="logo" to={"/"} onClick={closeNav}>
+              <img width="115%" src={logo} alt="logo" />
+            </Link>
           </div>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            aria-expanded={open ? "true" : "false"}
             aria-label="Toggle navigation"
-            onClick={click}>
-            <span class="navbar-toggler-icon"></span>
+            onClick={click}
+          >
+            <span className="navbar-toggler-icon"></span>
           </button>
         </div>
         <div
           style={{ display: "flex", justifyContent: "end", border: "none" }}
-          class="container-fluid"
+          className="container-fluid"
         >
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className={`collapse navbar-collapse ${open ? "show" : ""}`} id="navbarSupportedContent">
             <ul
               style={{ justifyContent: "space-between" }}
-              class="navbar-nav me-auto mb-2 mb-lg-0 m-auto"
+              className="navbar-nav me-auto mb-2 mb-lg-0 m-auto"
             >
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
-                  class="nav-link active"
+                  className="nav-link active"
                   aria-current="page"
                   to={"/"}
-                  onClick={click}
+                  onClick={closeNav}
                 >
                   Home
                 </Link>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   to={"#"}
                   id="navbarDropdown"
                   role="button"
@@ -73,37 +83,37 @@ const Navbar = () => {
                 >
                   About Us
                 </Link>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link class="dropdown-item" to="/aimAndObjective">
+                    <Link className="dropdown-item" to="/aimAndObjective" onClick={closeNav}>
                       Aim and objective
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to={"/join-us"}>
+                    <Link className="dropdown-item" to={"/join-us"} onClick={closeNav}>
                       Join Us
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/ourTeam">
+                    <Link className="dropdown-item" to="/ourTeam" onClick={closeNav}> 
                       Our Team
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to={"/contact-detail"}>
+                    <Link className="dropdown-item" to={"/contact-detail"} onClick={closeNav}>
                       Contact Detail
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/presedentMessage">
+              <li className="nav-item">
+                <Link className="nav-link" to="/presedentMessage" onClick={closeNav}>
                   President's Message
                 </Link>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   to={"#"}
                   id="navbarDropdown"
                   role="button"
@@ -112,59 +122,42 @@ const Navbar = () => {
                 >
                   Our Focus
                 </Link>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link class="dropdown-item" to="/health-care-awareness">
+                    <Link className="dropdown-item" to="/health-care-awareness" onClick={closeNav}>
                       Health Care Awareness
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to={"#"}>
-                      Global Warming
-                    </Link>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li>
-                        <Link class="dropdown-item" to="/aimAndObjective">
-                          Aim and objective
-                        </Link>
-                      </li>
-                      <li>
-                        <Link class="dropdown-item" to={"/join-us"}>
-                          Join Us
-                        </Link>
-                      </li>
-                      <li>
-                        <Link class="dropdown-item" to="/ourTeam">
-                          Our Team
-                        </Link>
-                      </li>
-                      <li>
-                        <Link class="dropdown-item" to={"/contact-detail"}>
-                          Contact Detail
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link class="dropdown-item" to="/trafic-sence">
+                    <Link className="dropdown-item" to="/trafic-sence" onClick={closeNav}>
                       Traffic Sence
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/consumer-awareness">
+                    <Link className="dropdown-item" to="/consumer-awareness" onClick={closeNav}>
                       Consumer Awareness
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/consumer-awareness">
+                    <Link className="dropdown-item" to="/" onClick={closeNav}>
                       Rain Harvesting
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/" onClick={closeNav}>
+                    CPR (cardio pulmonary resuscitation)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/" onClick={closeNav}>
+                    life saving skill
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   to={"#"}
                   id="navbarDropdown"
                   role="button"
@@ -173,50 +166,50 @@ const Navbar = () => {
                 >
                   News And Views
                 </Link>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link class="dropdown-item" to={"/events"}>
+                    <Link className="dropdown-item" to={"/events"} onClick={closeNav}>
                       Events
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/press-release">
+                    <Link className="dropdown-item" to="/press-release" onClick={closeNav}>
                       Press Release
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/photo">
+                    <Link className="dropdown-item" to="/photo" onClick={closeNav}>
                       Photo Gallery
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <Link
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   to={"#"}
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Faq
+                  FAQ
                 </Link>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link class="dropdown-item" to="/about-Global-Warming">
+                    <Link className="dropdown-item" to="/about-Global-Warming" onClick={closeNav}>
                       About Global Warming
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/about-Organ-Donating">
+                    <Link className="dropdown-item" to="/about-Organ-Donating" onClick={closeNav}>
                       About Organ Donating
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <Link to={"/contact-detail"} class="nav-link">
+              <li className="nav-item">
+                <Link to={"/contact-detail"} className="nav-link" onClick={closeNav}>
                   Contact Us
                 </Link>
               </li>
@@ -228,12 +221,12 @@ const Navbar = () => {
             <img width='70%' src={yuth} alt="" />
           </div>
           <div className="d-flex">
-            <Link style={{ marginRight: "10px" }} to={"/employeForm"}>
+            <Link style={{ marginRight: "10px" }} to={"/employeForm"} onClick={closeNav}>
               <button className="button" style={{ background: "green" }}>
                 Employer Zone
               </button>
             </Link>
-            <Link to={"/employeDetail"}>
+            <Link to={"/employeDetail"} onClick={closeNav}>
               <button className="button" style={{ background: "green" }}>
                 Employee Zone
               </button>

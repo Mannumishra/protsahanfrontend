@@ -23,9 +23,13 @@ const EditJobDetails = () => {
 
     const getApiData = async () => {
         try {
-            let res = await axios.get(`https://protsahan.onrender.com/api/job/${_id}`);
+            let res = await axios.get(`https://api.prothsahanteam.org/api/job/${_id}`);
             setFormData(res.data.data);
+            if(res.status===200){
+                toast.success("Deta Update Successfully")
+            }
         } catch (error) {
+            toast.success("error")
             console.log(error);
         }
     };
@@ -41,7 +45,7 @@ const EditJobDetails = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`https://protsahan.onrender.com/api/job/${_id}`, formData);
+            const response = await axios.put(`https://api.prothsahanteam.org/api/job/${_id}`, formData);
             if (response.status === 200) {
                 toast.success("Job Update Successfully")
                 navigate("/employeDetail")

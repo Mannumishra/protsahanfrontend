@@ -10,7 +10,7 @@
     background-image: url('../images/volentier.png');
     width: 100%;
     background-size: cover;
-    height: 434px;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,13 +41,13 @@
     padding: 5px;
   }
   .overlay{
-    height: 100vh;
+    height: 100%;
   }
   .heading{
     font-size: 35px !important;
   }
   .bgimage{
-    height: 100vh;
+    height: 100%;
 }
   
 }

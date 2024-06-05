@@ -11,7 +11,7 @@ import image8 from "../../HomePage/images/globalwarming8.jpg";
 const Global_warming = () => {
   return (
     <>
-      <div className="container mt-5 mb-5">
+      <div className="container Allpagemargin mb-5">
         <div
           className="row p-3"
           style={{ boxShadow: "0px 0px 37px 0px lightgray", alignItems:'center' }}

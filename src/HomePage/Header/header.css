@@ -15,7 +15,6 @@
   position: fixed;
   top: 50%;
   right: -3%;
-  /* left: 80%; */
   width: 200px;
   height: 100%;
   padding-top: 20px;
@@ -83,7 +82,13 @@
   .button2 {
     display: block;
   }
-  .sidebar2{
-    display: none;
+  .sidebar{
+    right: -10%;
+  }
+  .sidebar button {
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px 0;
+    width: 50%;
   }
 }

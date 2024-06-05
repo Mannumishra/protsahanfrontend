@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../AboutUs/ourTeam.css";
 import axios from "axios";
+import toast from "react-hot-toast";
+
 
 const JoinUs = () => {
   const [data, setData] = useState({
@@ -40,9 +42,13 @@ const JoinUs = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await axios.post("https://protsahan.onrender.com/api/join", data)
+      let res = await axios.post("https://api.prothsahanteam.org/api/join", data)
       console.log(res)
+      if(res.status===200){
+        toast.success("Form Submited Successfully")
+      }
     } catch (error) {
+      toast.error("Please Fill All Fields")
       console.log(error)
     }
   };

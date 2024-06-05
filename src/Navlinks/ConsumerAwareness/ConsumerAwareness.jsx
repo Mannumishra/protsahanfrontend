@@ -1,5 +1,6 @@
 import React from "react";
 import consumerProtection from "../../HomePage/images/consumer-protection.jpg";
+import { Link } from "react-router-dom";
 const ConsumerAwareness = () => {
   return (
     <>
@@ -36,7 +37,7 @@ const ConsumerAwareness = () => {
             Send written complaint to
             </p>
             <p>
-            <a href="mailto:info@prothsahanteam.org">info@prothsahanteam.org</a>
+            <Link to="mailto:info@prothsahanteam.org">info@prothsahanteam.org</Link>
             </p>
           </div>
         </div>

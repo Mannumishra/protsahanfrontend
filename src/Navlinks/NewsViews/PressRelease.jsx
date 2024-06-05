@@ -1,8 +1,8 @@
 import React from "react";
-import img1 from '../../HomePage/images/naidunia13sep11.jpg'
-import img2 from '../../HomePage/images/10-SEP-2011-CERT-PRGM-2ND-A.jpg'
-import img3 from '../../HomePage/images/hindustan.jpg'
-
+import img1 from "../../HomePage/images/naidunia13sep11.jpg";
+import img2 from "../../HomePage/images/10-SEP-2011-CERT-PRGM-2ND-A.jpg";
+import img3 from "../../HomePage/images/hindustan.jpg";
+import { Link } from "react-router-dom";
 
 const PressRelease = () => {
   return (
@@ -11,7 +11,7 @@ const PressRelease = () => {
         <div
           style={{
             padding: "2rem",
-            boxShadow:'0px 0px 37px 0px lightgray',
+            boxShadow: "0px 0px 37px 0px lightgray",
             marginTop: "2rem",
             marginBottom: "2rem",
           }}
@@ -40,9 +40,9 @@ const PressRelease = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                 <div style={{display:'flex', justifyContent:'center'}}>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <img src={img1} alt="" />
-                 </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -66,9 +66,9 @@ const PressRelease = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                <div style={{display:'flex', justifyContent:'center'}}>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <img src={img2} alt="" />
-                 </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -92,17 +92,29 @@ const PressRelease = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                    <p>
+                  <p>
                     Hindi Press Release on 27/10/2007 on Global Warming March :
-                    <a style={{textDecoration:'none'}} href="https://prothsahanteam.org/Downloads/PressRelease.pdf"> Click Here</a>
-                    </p>
-                    <p>
-                    English Press Release on 27/10/2007 on Global Warming March : 
-                    <a style={{textDecoration:'none'}} href="https://prothsahanteam.org/Downloads/PressRelease.pdf"> Click Here</a>
-                    </p>
-                <div style={{display:'flex', justifyContent:'center'}}>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to="https://prothsahanteam.org/Downloads/PressRelease.pdf"
+                    >
+                      {" "}
+                      Click Here
+                    </Link>
+                  </p>
+                  <p>
+                    English Press Release on 27/10/2007 on Global Warming March
+                    :
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to="https://prothsahanteam.org/Downloads/PressRelease.pdf"
+                    >
+                      Click Here
+                    </Link>
+                  </p>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <img src={img3} alt="" />
-                 </div>
+                  </div>
                 </div>
               </div>
             </div>

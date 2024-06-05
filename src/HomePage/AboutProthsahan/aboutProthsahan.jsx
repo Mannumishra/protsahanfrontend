@@ -6,7 +6,8 @@ import icon4 from "../images/proht-icon_4.png";
 import icon5 from "../images/proht-icon_5.png";
 import "../AboutProthsahan/aboutprothsahan.css";
 import volunteerImage from '../images/volunteer-image.jpg'
-import img from "../images/img1.avif";
+import img from "../images/about.jpg";
+import volentier from '../../HomePage/images/volentier1.png.jpg'
 
 const aboutProthsahan = () => {
   return (
@@ -32,7 +33,7 @@ const aboutProthsahan = () => {
                 ></iframe> */}
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{display:'flex', alignItems:'center'}}>
               <div className="row">
                 <div className="col-md-6">
                   <div className="box">
@@ -65,56 +66,6 @@ const aboutProthsahan = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="row">
-                <div className="col-md-6 box">
-                  <div>
-                    <img src={icon1} />
-                  </div>
-                  <div>
-                    <h6>GREEN ENVIRONMENT</h6>
-                  </div>
-                </div>
-                <div className="col-md-6 box">
-                  <div>
-                    <img src={icon1} />
-                  </div>
-                  <div>
-                    <h6>GREEN ENVIRONMENT</h6>
-                  </div>
-                </div>
-                <div className="col-md-6 box">
-                  <div>
-                    <img src={icon2} />
-                  </div>
-                  <div>
-                    <h6>RURAL COMPUTER EDUCATION</h6>
-                  </div>
-                </div>
-                <div className="col-md-6 box">
-                  <div>
-                    <img src={icon3} />
-                  </div>
-                  <div>
-                    <h6>TRAFFIC SENSE</h6>
-                  </div>
-                </div>
-                <div className="col-md-6 box">
-                  <div>
-                    <img src={icon4} />
-                  </div>
-                  <div>
-                    <h6>DRAIN TREATMENT- AWARENESS</h6>
-                  </div>
-                </div>
-                <div className="col-md-6 box">
-                  <div>
-                    <img src={icon5} />
-                  </div>
-                  <div>
-                    <h6>LEPROSY/ NEEDY PEOPLE HELP</h6>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
@@ -125,7 +76,7 @@ const aboutProthsahan = () => {
           <div className="container">
             <div className="row" style={{alignItems:'center', padding:'2rem 0rem'}}>
               <div className="col-md-6">
-                <img width='100%' src={volunteerImage} alt="" />
+                <img width='90%' src={volentier} alt="" />
               </div>
               <div className="col-md-6">
                 <h1 className="mb-4 heading" style={{ color: "white", fontSize:'50px'}}>

@@ -49,7 +49,7 @@ const OurTeam = () => {
     },
   ];
   return (
-    <div className="container mt-5 Allpagemargin">
+    <div className="container Allpagemargin">
       <div className="row">
         {OurTeam.map((item) => (
           <div className="col-md-4">

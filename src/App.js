@@ -28,6 +28,7 @@ import ListAndDonar from "./HomePage/Footer/ListAndDonar";
 import Global_warming from "./HomePage/CardCarousel/Global_warming";
 import PhotoDetail from "./Navlinks/NewsViews/PhotoDetail";
 import Editjobdetails from "./Navlinks/NavButtonSection/Editjobdetails";
+import Showevent from "./Navlinks/NewsViews/Showevent";
 const App = () => {
   return (
     <>
@@ -57,7 +58,8 @@ const App = () => {
           <Route path="/editdetail/:_id" element={<Editjobdetails />} />
           <Route path="/donar" element={<ListAndDonar />} />
           <Route path="/global-warming" element={<Global_warming />} />
-          <Route path="/Products-Info/:id" element={<PhotoDetail />} />
+          <Route path="/photodetail/:_id" element={<PhotoDetail />} />
+          <Route path="/showevent/:_id" element={<Showevent />} />
         </Routes>
         <Footer />
       </BrowserRouter>

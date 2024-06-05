@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import newsCard1 from "../images/newsCard1.jpg";
 import newsCard2 from "../images/newsCard2.jpg";
@@ -7,9 +8,7 @@ import newsCard4 from "../images/newsCard4.jpg";
 import newsCard5 from "../images/newsCard5.jpg";
 import newsCard6 from "../images/newsCard6.jpg";
 import vote from "../images/vote.jpg";
-
 import "../../HomePage/News-Compaign/news.css";
-import { Link } from "react-router-dom";
 
 const newsCompaign = () => {
   const settings = {
@@ -224,7 +223,9 @@ const newsCompaign = () => {
               आपका वोट बहुमूल्य है अपने हक का प्रयोग करे ।
             </p>
             <p className="description">वोट से संबंधित किसी जानकारी के लिए संपर्क करें</p>
+            <Link to="/contact-detail">
             <button className="btn clickme">Click Here</button>
+            </Link>
           </div>
         </div>
       </div>

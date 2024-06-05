@@ -4,7 +4,7 @@ import img1 from '../images/carousel1.jpg'
 import img2 from '../images/carousel2.jpg'
 import img3 from '../images/carousel3.jpg'
 import img4 from '../images/carousel4.jpg'
-import img5 from '../images/carousel5.jpg'
+import img5 from '../images/carouselProthsahan.jpg'
 import '../HomeCarousel/carousel.css'
 
 const carousel = () => {
@@ -28,7 +28,7 @@ const carousel = () => {
       <img src={img4} class="d-block w-100" alt="..." />
     </div>
     <div class="carousel-item">
-      <img src={img5} class="d-block w-100" alt="..." />
+      <img src={img5} class="d-block w-100" height={'100%'} alt="..." />
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

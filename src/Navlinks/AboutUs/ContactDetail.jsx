@@ -27,14 +27,14 @@ const ContactDetail = () => {
     // console.log(formData);
     try {
       const response = await axios.post(
-        "https://protsahan.onrender.com/api/contact",
+        "https://api.prothsahanteam.org/api/contact",
         formData
       );
       if(response.status===200){
         toast.success("Query send successfully")
       }
     } catch (error) {
-      console.error("Error submitting data:", error);
+      console.error("Error:", error);
     }
   };
 
@@ -185,31 +185,46 @@ const ContactDetail = () => {
                 </h1>
                 <div className="row">
                   <div className="col-md-4">
-                    <p>A/c Detail :</p>
+                    <p>Name:</p>
                   </div>
                   <div className="col-md-8">
-                    <p>023354</p>
+                    <p>Prothsahan team</p>
                   </div>
                   <div className="col-md-4">
-                    <p>Address :</p>
+                    <p>Bank:</p>
                   </div>
                   <div className="col-md-8">
-                    <p>Corporation Bank, Dilshad Garden</p>
+                    <p>Union Bank of India</p>
                   </div>
                   <div className="col-md-4">
-                    <p>Branch Code :</p>
+                    <p>Branch:</p>
                   </div>
                   <div className="col-md-8">
-                    <p>463 ABB</p>
+                    <p>Dilshad Garden, Delhi</p>
                   </div>
-                  <p>
-                    <b>Anywhwere Branch Banking Delhi-110095, INDIA</b>
-                  </p>
+                 <div className="col-md-4">
+                    <p>Account no : </p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>520101254977622</p>
+                  </div>
                   <div className="col-md-4">
-                    <p>Our PAN No :</p>
+                    <p>Account Type: </p>
                   </div>
                   <div className="col-md-8">
-                    <p>AAAAP7473K</p>
+                    <p>SB</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>IFSC CODE:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>UBIN0904635</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>MICR CODE:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>110026331</p>
                   </div>
                   <p>
                     <b> All donations are Tax exempted u/s 80g</b>
@@ -247,89 +262,35 @@ const ContactDetail = () => {
                   </h3>
                   <p>
                     <span>
-                      <b>Contact :</b>
-                    </span>{" "}
+                      <b>Contact Person : </b>
+                    </span>
                     Ms Rachna Bajaj
-                  </p>
-                  <p>
-                    <b>Person: </b>
                   </p>
                   <p>
                     <span>
                       <b>Address :</b>
-                    </span>{" "}
+                    </span>
                     126, Sect -1 , Rohtak, Haryana
                   </p>
                 </div>
                 <div className="mb-5">
                   <h3 className="mb-4">
-                    <u>FARIDABAD (HARYANA)</u>
-                  </h3>
-                  <p>
-                    <span>
-                      <b>Contact :</b>
-                    </span>{" "}
-                    Mr. Sachin Kaushik
-                  </p>
-                  <p>
-                    <b>Person: </b>
-                  </p>
-                  <p>
-                    <span>
-                      <b>Address :</b>
-                    </span>{" "}
-                    Plot no-1, Sanjay Memorial Industrial Estate, Faridabad,
-                    Haryana
-                  </p>
-                  <p>
-                    <b>Tel :</b>91-981017772
-                  </p>
-                </div>
-                <div className="mb-5">
-                  <h3 className="mb-4">
                     <u>GURGAON (HARYANA)</u>
                   </h3>
                   <p>
                     <span>
-                      <b>Contact :</b>
-                    </span>{" "}
+                      <b>Contact Person : </b>
+                    </span>
                     Mr Vipin Tyagi
-                  </p>
-                  <p>
-                    <b>Person: </b>
                   </p>
                   <p>
                     <span>
                       <b>Address :</b>
-                    </span>{" "}
+                    </span>
                     N-300, Ist floor, Mayfield Gdn, Sec-51, Gurgaon
                   </p>
                   <p>
                     <b>Tel :</b> 91-9818140741
-                  </p>
-                </div>
-                <div>
-                  <h3 className="mb-4">
-                    <u>GURGAON (HARYANA)</u>
-                  </h3>
-                  <p>
-                    <span>
-                      <b>Contact :</b>
-                    </span>{" "}
-                    Ms Sushma Sinha
-                  </p>
-                  <p>
-                    <b>Person: </b>
-                  </p>
-                  <p>
-                    <span>
-                      <b>Address :</b>
-                    </span>{" "}
-                    310, Agarwal Plaza, Netaji Subhash Place Lala Lajpat Rai
-                    Society, Bhopal Place New Delhi-110085
-                  </p>
-                  <p>
-                    <b>Tel :</b> 91-9212317673
                   </p>
                 </div>
               </div>

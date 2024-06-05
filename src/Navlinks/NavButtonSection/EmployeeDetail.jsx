@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const EmployeeDetail = () => {
@@ -12,21 +13,21 @@ const EmployeeDetail = () => {
 
   const getApiData = async () => {
     try {
-      let res = await axios.get("https://protsahan.onrender.com/api/job");
+      let res = await axios.get("https://api.prothsahanteam.org/api/job");
       console.log(res);
       setData(res.data.data);
     } catch (error) {
       console.log(error);
     }
   };
-  const deleteItem = async (_id) => {
-    try {
-      let res = await axios.delete("https://protsahan.onrender.com/api/job/" + _id)
-      getApiData()
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // const deleteItem = async (_id) => {
+  //   try {
+  //     let res = await axios.delete("https://api.prothsahanteam.org/api/job/" + _id)
+  //     getApiData()
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   const getFiledata = (event) => {
     const { name, files } = event.target
@@ -45,10 +46,14 @@ const EmployeeDetail = () => {
 const sendDataEmp = async(e)=>{
   e.preventDefault()
   try {
-    let res = await axios.post("https://protsahan.onrender.com/api/emp" ,formData)
+    let res = await axios.post("https://api.prothsahanteam.org/api/emp" ,formData)
     console.log(res)
+    if(res.status===200){
+      toast.success("Job Apply Successfully")
+    }
   } catch (error) {
     console.log(error)
+    toast.error("Error")
   }
 }
 
@@ -92,8 +97,8 @@ const sendDataEmp = async(e)=>{
                     <th>organization Name</th>
                     <th>City</th>
                     <th>State</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    {/* <th>Edit</th>
+                    <th>Delete</th> */}
                   </tr>
                   <tbody>
                     {data.map((item, index) =>
@@ -108,8 +113,8 @@ const sendDataEmp = async(e)=>{
                         <td>{item.organisationname} </td>
                         <td>{item.city}</td>
                         <td>{item.state}</td>
-                        <td><Link className="btn btn-success" to={`/editdetail/${item._id}`}>Edit</Link></td>
-                        <td><button className="btn btn-danger" onClick={() => deleteItem(item._id)}>Delete</button></td>
+                        {/* <td><Link className="btn btn-success" to={`/editdetail/${item._id}`}>Edit</Link></td>
+                        <td><button className="btn btn-danger" onClick={() => deleteItem(item._id)}>Delete</button></td> */}
                       </tr>
                     )}
                   </tbody>
@@ -145,7 +150,7 @@ const sendDataEmp = async(e)=>{
                         onChange={getInputData}
                       />
                       <div className="mt-3">
-                        <p>Resume: <span style={{ color: 'red' }}>Please Upload PDF Only</span></p>
+                        <p>Resume: Please Upload PDF Only</p>
                       </div>
                       <div>
                         <input class="form-control" type="file" id="formFile" accept="application/pdf" name="resume" onChange={getFiledata} />

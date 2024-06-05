@@ -33,14 +33,15 @@
 .contentt{
   background-image: url('../images/vote.jpg');
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-position: center;
   background-attachment: fixed;
   padding: 0 !important;
 }
 .hindiContentOverlay{
   background-color: rgba(0, 0, 0, 0.893);
-  height: 100vh;
+  height: 100%;
+  padding: 3rem;
   width: 100%;
 }
 .mainContent{
@@ -77,9 +78,10 @@
      line-height: 60px;
    }
    .contentt{
-    height: 70vh;
+    height: 100%;
   }
   .hindiContentOverlay{
-    height: 70vh;
+    height: 100%;
+    padding: 1rem;
   }
 }

@@ -17,13 +17,17 @@
 .navbar-toggler {
   border: none !important;
 }
+.divmain{
+  text-align: center;
+  display: flex;
+}
 
 @media only screen and (max-width: 600px) {
   .nav-link {
     border: none !important;
   }
   .logo img {
-    width: 100%;
+    width: 80%;
   }
   .yuth img{
     display: none;
@@ -36,6 +40,13 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+  .divmain{
+    text-align: start;
+    display: flex;
+  }
+  .logo{
+    display: flex;
   }
 
 }

@@ -1,21 +1,57 @@
+import axios from "axios";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const Volunteer = () => {
   const [data, setData] = useState({
     title: "",
     firstName: "",
     lastName: "",
-    dateofbirth: "",
-    pan: "",
+    dob: "",
+    panNo: "",
     email: "",
     mobile: "",
     address: "",
     country: "",
     state: "",
     city: "",
-    picCode: "",
+    pinCode: "",
     citizenship: "",
+    helpMessage: "",
+    name1: "",
+    name2: "",
+    occupation1: "",
+    occupation2: "",
+    address1: "",
+    address2: "",
+    number1: "",
+    number2: "",
+    email1: "",
+    email2: "",
   });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+  const formSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await axios.post(
+        "https://api.prothsahanteam.org/api/join",
+        data
+      );
+      if (res.status===200) {
+        toast.success("Form Submited Successfully");
+      }
+      console.log(res);
+    } catch (error) {
+      toast.error("Please Fill All Fields");
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -30,12 +66,17 @@ const Volunteer = () => {
           <h4 style={{ color: "#ff4444", marginBottom: "2rem" }}>
             <u>Personal Detail</u>
           </h4>
-          <form action="">
+          <form action="" onSubmit={formSubmit}>
             <div className="row" style={{ lineHeight: "34px" }}>
               <div className="col-md-2">
                 <div>
                   <label htmlFor="">Title</label>
-                  <select style={{ width: "100%" }} name="title" id="">
+                  <select
+                    onChange={handleChange}
+                    style={{ width: "100%" }}
+                    name="title"
+                    id=""
+                  >
                     <option value="Select">Select</option>
                     <option value="Mr.">Mr.</option>
                     <option value="Ms.">Ms.</option>
@@ -48,6 +89,7 @@ const Volunteer = () => {
                 <div>
                   <label htmlFor="">First Name*</label>
                   <input
+                    onChange={handleChange}
                     name="firstName"
                     style={{ width: "100%" }}
                     type="text"
@@ -59,6 +101,7 @@ const Volunteer = () => {
                 <div>
                   <label htmlFor="">Last Name*</label>
                   <input
+                    onChange={handleChange}
                     name="lastName"
                     style={{ width: "100%" }}
                     type="text"
@@ -72,8 +115,9 @@ const Volunteer = () => {
                   <label htmlFor="">Date Of Birth</label>
                   <div className="col-md-12">
                     <input
+                      onChange={handleChange}
                       className="form-control"
-                      name="dateofbirth"
+                      name="dob"
                       type="date"
                     />
                   </div>
@@ -83,7 +127,8 @@ const Volunteer = () => {
                 <label htmlFor="">PAN No.</label>
                 <div>
                   <input
-                    name="pan"
+                    onChange={handleChange}
+                    name="panNo"
                     style={{ width: "100%" }}
                     type="number"
                     placeholder="000 000 0000"
@@ -94,6 +139,7 @@ const Volunteer = () => {
               <div className="col-md-6">
                 <label htmlFor="">Email:</label>
                 <input
+                  onChange={handleChange}
                   name="email"
                   style={{ width: "100%" }}
                   type="email"
@@ -103,6 +149,7 @@ const Volunteer = () => {
               <div className="col-md-6">
                 <label htmlFor="">Mobile No.</label>
                 <input
+                  onChange={handleChange}
                   name="mobile"
                   style={{ width: "100%" }}
                   type="number"
@@ -121,11 +168,22 @@ const Volunteer = () => {
               <div style={{ lineHeight: "33px" }} className="row">
                 <div className="col-md-6">
                   <label htmlFor="">Address</label>
-                  <textarea rows="4" cols="65" name="address" id=""></textarea>
+                  <textarea
+                    onChange={handleChange}
+                    rows="4"
+                    cols="65"
+                    name="address"
+                    id=""
+                  ></textarea>
                 </div>
                 <div className="col-md-6">
                   <label for="country">Choose a country:</label>
-                  <select style={{ width: "100%" }} id="country" name="country">
+                  <select
+                    onChange={handleChange}
+                    style={{ width: "100%" }}
+                    id="country"
+                    name="country"
+                  >
                     <option value="afghanistan">Afghanistan</option>
                     <option value="argentina">Argentina</option>
                     <option value="australia">Australia</option>
@@ -151,6 +209,7 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">State</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="State"
@@ -161,6 +220,7 @@ const Volunteer = () => {
                 <div className="col-md-6">
                   <label htmlFor="">City</label>
                   <input
+                    onChange={handleChange}
                     style={{ width: "100%" }}
                     type="text"
                     placeholder="City"
@@ -170,6 +230,7 @@ const Volunteer = () => {
                 <div className="col-md-6">
                   <label htmlFor="">Pin/Zip Code</label>
                   <input
+                    onChange={handleChange}
                     style={{ width: "100%" }}
                     type="number"
                     placeholder="Pin / Zip Code"
@@ -178,7 +239,12 @@ const Volunteer = () => {
                 </div>
                 <div className="col-md-6">
                   <label htmlFor="">Citizenship</label>
-                  <select style={{ width: "100%" }} name="citizenship" id="">
+                  <select
+                    onChange={handleChange}
+                    style={{ width: "100%" }}
+                    name="citizenship"
+                    id=""
+                  >
                     <option value="Select">Select</option>
                     <option value="Indian Resident">Indian Resident</option>
                     <option value="Non Resident Indian">
@@ -191,7 +257,13 @@ const Volunteer = () => {
                   <label htmlFor="">
                     How Can I Help You <b>Prothsahan Team</b>
                   </label>
-                  <textarea cols="67" rows="3" name="" id=""></textarea>
+                  <textarea
+                    onChange={handleChange}
+                    cols="67"
+                    rows="3"
+                    name="helpMessage"
+                    id=""
+                  ></textarea>
                 </div>
               </div>
               <div className="row mt-5" style={{ lineHeight: "33px" }}>
@@ -225,9 +297,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Name</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="Name"
+                      name="name1"
                     />
                   </div>
                 </div>
@@ -235,9 +309,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Name</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="Name"
+                      name="name2"
                     />
                   </div>
                 </div>
@@ -245,9 +321,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Occupation</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="Name"
+                      name="occupation1"
                     />
                   </div>
                 </div>
@@ -255,9 +333,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Name</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="Name"
+                      name="occupation2"
                     />
                   </div>
                 </div>
@@ -265,9 +345,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Address</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="Address"
+                      name="address1"
                     />
                   </div>
                 </div>
@@ -275,9 +357,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Address</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="text"
                       placeholder="Address"
+                      name="address2"
                     />
                   </div>
                 </div>
@@ -285,9 +369,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Contact No.</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="number"
                       placeholder="0000 000 000"
+                      name="number1"
                     />
                   </div>
                 </div>
@@ -295,9 +381,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Contact No.</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="number"
                       placeholder="0000 000 000"
+                      name="number2"
                     />
                   </div>
                 </div>
@@ -305,9 +393,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Email</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="email"
                       placeholder="Enter Your Email"
+                      name="email1"
                     />
                   </div>
                 </div>
@@ -315,9 +405,11 @@ const Volunteer = () => {
                   <div>
                     <label htmlFor="">Email</label>
                     <input
+                      onChange={handleChange}
                       style={{ width: "100%" }}
                       type="email"
                       placeholder="Enter Your Email"
+                      name="email2"
                     />
                   </div>
                 </div>

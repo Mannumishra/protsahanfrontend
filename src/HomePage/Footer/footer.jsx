@@ -4,6 +4,7 @@ import sponser2 from "../images/sponser2.jpg";
 import sponser3 from "../images/sponser3.jpg";
 import sponser4 from "../images/sponser4.jpg";
 import "../Footer/footer.css";
+import { Link } from "react-router-dom";
 
 const footer = () => {
   return (
@@ -17,32 +18,32 @@ const footer = () => {
               <h3>About Us</h3>
               <ul>
                 <li>
-                  <a href="/">Aim and Objective</a>
+                  <Link href="/">Aim and Objective</Link>
                 </li>
                 <li>
-                  <a href="/">Join Us</a>
+                  <Link href="/">Join Us</Link>
                 </li>
                 <li>
-                  <a href="/ourTeam">Our Team</a>
+                  <Link href="/ourTeam">Our Team</Link>
                 </li>
                 <li>
-                  <a href="/contact-detail">Contact Detail</a>
+                  <Link href="/contact-detail">Contact Detail</Link>
                 </li>
               </ul>
 
               <h3 className="mt-5">News and Views</h3>
               <ul>
                 <li>
-                  <a href="/events">Events</a>
+                  <Link href="/events">Events</Link>
                 </li>
                 <li>
-                  <a href="/press-release">Press Release</a>
+                  <Link href="/press-release">Press Release</Link>
                 </li>
                 <li>
-                  <a href="/donar">List Of Donor</a>
+                  <Link href="/donar">List Of Donor</Link>
                 </li>
                 <li>
-                  <a href="#">Career</a>
+                  <Link href="#">Career</Link>
                 </li>
               </ul>
             </div>
@@ -68,7 +69,7 @@ const footer = () => {
               <h3>Reach Us</h3>
               <div>
                 <iframe
-                  width="380"
+                  width="100%"
                   height="345"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.3088610267127!2d77.31472821508366!3d28.680406082398946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfba7146aaaab%3A0x3365d532184e949e!2sProthsahan+Team!5e0!3m2!1sen!2s!4v1502185834778"
                 ></iframe>
