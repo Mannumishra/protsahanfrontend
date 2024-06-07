@@ -154,11 +154,11 @@ const EmployeeDetail = () => {
               </table>
             </div>
             <div>
-              <h5 className="mt-5 mb-5"><b> Please Provide Your Detail. </b></h5>
+             
               <form onSubmit={sendDataEmp}>
                 <div className="row">
-                  {/* <div className="col-md-6">
-                    <label htmlFor="jobpost" className="form-label">Job Post</label>
+                  <div className="col-md-6">
+                    {/* <label htmlFor="jobpost" className="form-label">Job Post</label>
                     <input
                       type="text"
                       className="form-control"
@@ -265,9 +265,11 @@ const EmployeeDetail = () => {
                       name="email"
                       value={filldata.email}
                       readOnly
-                    />
-                  </div> */}
+                    /> */}
+                  </div>
+                  
                   <div className="col-md-6">
+                  <h5 className="mt-5 mb-5"><b> Please Provide Your Detail. </b></h5>
                     <label
                       htmlFor="empname"
                       className="form-label"
