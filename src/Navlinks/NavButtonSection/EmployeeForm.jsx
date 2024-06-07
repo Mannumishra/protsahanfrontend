@@ -127,15 +127,17 @@ const EmployeeForm = () => {
               </h4>
               <div style={{ lineHeight: "33px" }} className="row">
                 <div className="col-md-6">
-                  <label htmlFor="">Address</label>
-                  <textarea
-                    class="form-control"
+                  <label htmlFor="">Landmark</label>
+                  <input type="text" className="form-control" onChange={handleChange} name="address" id="" />
+                  <label htmlFor="">Pin/Zip Code</label>
+                  <input
                     onChange={handleChange}
-                    name="address"
                     required
-                    placeholder="Leave a comment here"
-                    id="floatingTextarea2"
-                  ></textarea>
+                    style={{ width: "100%" }}
+                    type="number"
+                    placeholder="Pin / Zip Code"
+                    name="pincode"
+                  />
                 </div>
                 <div className="col-md-6">
                   <div>
@@ -157,15 +159,6 @@ const EmployeeForm = () => {
                     type="text"
                     placeholder="City"
                     name="city"
-                  />
-                  <label htmlFor="">Pin/Zip Code</label>
-                  <input
-                    onChange={handleChange}
-                    required
-                    style={{ width: "100%" }}
-                    type="number"
-                    placeholder="Pin / Zip Code"
-                    name="pincode"
                   />
                 </div>
                 <div className="col-md-12">

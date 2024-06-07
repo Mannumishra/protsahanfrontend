@@ -89,21 +89,21 @@ const Navbar = () => {
                       Aim and objective
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link className="dropdown-item" to={"/join-us"} onClick={closeNav}>
                       Join Us
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link className="dropdown-item" to="/ourTeam" onClick={closeNav}> 
                       Our Team
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link className="dropdown-item" to={"/contact-detail"} onClick={closeNav}>
                       Contact Detail
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li className="nav-item">

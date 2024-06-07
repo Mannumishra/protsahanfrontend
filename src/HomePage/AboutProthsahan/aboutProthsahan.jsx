@@ -7,7 +7,7 @@ import icon5 from "../images/proht-icon_5.png";
 import "../AboutProthsahan/aboutprothsahan.css";
 import volunteerImage from '../images/volunteer-image.jpg'
 import img from "../images/about.jpg";
-import volentier from '../../HomePage/images/volentier1.png.jpg'
+import volentier from '../../HomePage/images/volentier1.png.jpeg'
 
 const aboutProthsahan = () => {
   return (

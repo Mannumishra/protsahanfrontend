@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import QrCode from '../../HomePage/images/qrCode.jpg'
 
 const DonateNow = () => {
   const [data, setData] = useState({
@@ -18,7 +19,8 @@ const DonateNow = () => {
     city: '',
     pinCode: '',
     citizenship: '',
-    helpMessage: ''
+    helpMessage: '',
+    money:""
   })
   const formField = (e) => {
     const { name, value } = e.target;
@@ -45,9 +47,9 @@ const DonateNow = () => {
           className="mt-5 mb-5"
           style={{ boxShadow: '0px 0px 37px 0px lightgray', padding: "2rem" }}
         >
-          <h1 style={{ color: "#00C851", marginBottom: "2rem" }}>
+          {/* <h1 style={{ color: "#00C851", marginBottom: "2rem" }}>
             MEMBERSHIP FORM
-          </h1>
+          </h1> */}
 
           <form onSubmit={formSubmit} action="">
             <div className="row" style={{ lineHeight: "34px" }}>
@@ -59,9 +61,9 @@ const DonateNow = () => {
                   <select onChange={formField} style={{ width: "100%" }} name="donation" id="">
                     <option value="Select">Select</option>
                     <option value="Financial Donation">Financial Donation</option>
-                    <option value="Stationary Donation">Stationary Donation</option>
+                    {/* <option value="Stationary Donation">Stationary Donation</option>
                     <option value="Cloth Donation">Cloth Donation</option>
-                    <option value="Organ Donation">Organ Donation</option>
+                    <option value="Organ Donation">Organ Donation</option> */}
                   </select>
                 </div>
               </div>
@@ -143,7 +145,7 @@ const DonateNow = () => {
               </div>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-3">
               <h4
                 style={{ color: "#ff4444", marginBottom: "2rem" }}
                 className="mb-2"
@@ -153,7 +155,7 @@ const DonateNow = () => {
               <div style={{ lineHeight: "33px" }} className="row">
                 <div className="col-md-6">
                   <label htmlFor="">Address</label>
-                  <textarea rows="4" cols="65" name="address" id="" onChange={formField}></textarea>
+                  <textarea className="form-control" rows="4" cols="65" name="address" id="" onChange={formField}></textarea>
                 </div>
                 <div className="col-md-6">
                   <label for="country">Choose a country:</label>
@@ -191,6 +193,15 @@ const DonateNow = () => {
                   </div>
                 </div>
                 <div className="col-md-6">
+                  <label htmlFor="">Donation Amount</label>
+                  <input onChange={formField}
+                    style={{ width: "100%" }}
+                    type="text"
+                    placeholder="Please enter amount"
+                    name="money"
+                  />
+                </div>
+                <div className="col-md-6">
                   <label htmlFor="">City</label>
                   <input onChange={formField}
                     style={{ width: "100%" }}
@@ -217,21 +228,91 @@ const DonateNow = () => {
                     <option value="Foreign National">Foreign National</option>
                   </select>
                 </div>
+                
                 <div className="col-md-6">
                   <label htmlFor="">
                     How Can I Help You <b>Prothsahan Team</b>
                   </label>
-                  <textarea cols="67" rows="3" name="helpMessage" id="" onChange={formField}></textarea>
+                  <textarea className="form-control" name="helpMessage" id="" onChange={formField}></textarea>
                 </div>
+                
                 <div className="col-md-12 text-center mt-3">
                   <p style={{ background: '#ff4444', padding: '1rem', color: 'white', fontSize: '20px' }}>
-                    I would like  50% tax deduction on this donation.
+                    I would like tax deduction on this donation.
                   </p>
                   <h5 className="mb-3">
                     THANK YOU FOR CHOOSING TO DONATE TO PROTHSAHAN TEAM.
                   </h5>
                   <hr className="mb-5" />
                   <button style={{ width: "40%", padding: '1rem 4rem', background: '#ff4444' }} className="btn btn-danger">Submit</button>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                <div className="container">
+                {/* <hr /> */}
+                <h2 className="mt-4" style={{ color: "#00C851", marginBottom: "2rem" }}>
+                  <u>Our Banker Detail</u>
+                </h2>
+                <div className="row">
+                  <div className="col-md-4">
+                    <p>Name:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>Prothsahan team</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>Bank:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>Union Bank of India</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>Branch:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>Dilshad Garden, Delhi</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>Account no : </p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>520101254977622</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>Account Type: </p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>SB</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>IFSC CODE:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>UBIN0904635</p>
+                  </div>
+                  <div className="col-md-4">
+                    <p>MICR CODE:</p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>110026331</p>
+                  </div>
+                  <p>
+                    <b> All donations are Tax exempted u/s 80g</b>
+                  </p>
+                  <div className="col-md-2">
+                    <p>E-mail: </p>
+                  </div>
+                  <div className="col-md-8">
+                    <p>info@prothsahanteam.org | prothsahanteam@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+                </div>
+                <div className="col-md-6">
+                <div className="mt-5">
+                  <img width={'50%'} src={QrCode} alt="" />
+                </div>
                 </div>
               </div>
             </div>

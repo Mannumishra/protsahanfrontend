@@ -89,7 +89,7 @@ const footer = () => {
             <div>
               <p>
                 <b>
-              Designed By Digi India Solution
+              Designed By <Link target="_blank" to={'https://www.digiindiasolutions.com/'}>Digi India Solution</Link>
                 </b>
               </p>
             </div>

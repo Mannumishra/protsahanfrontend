@@ -13,17 +13,14 @@ const OurTeam = () => {
     {
       name: "ADVISORY COMMITTEE",
       title: "Mr. C.M.Sharma - Retd Architect",
-      title2:
-        "Mr. G.D.Sharma (Secretary Brahman Samaj Sabha - Vasundhra, Gzb.)",
       button: "",
     },
     {
       name: "GENERAL BODY MEMBER",
       title1: "Mr. Vivek Bajaj",
       title2: "Mr. Sachin Kaushik",
-      title3: "Mr. Shailendra Sharma",
     },
-    { name: "FINANCIAL SUPPORT", title: "Mr. R K Dhawan CA" },
+    { name: "FINANCIAL SUPPORT"},
     {
       name: "MEDICAL SUPPORT",
       title1: "Dr Alok Gupta, MBBS, MS, DNB (ENT)",
@@ -32,12 +29,10 @@ const OurTeam = () => {
     },
     {
       name: "LEGAL SUPPORT",
-      title: "Mr. Ravi Sinha (Advocate- Allahabad High Court)",
       title1: "Mr. Anil Pandit- Advocate , Distt Court Ghaziabad",
     },
     {
       name: "EVENT ORGANISING COMMITTEE",
-      title: "Magician Raj Kumar",
       title1: "Ms. Ritu Vashistha, M Sc, B Ed",
       title2: "Ms. Nidhi Kaushik, MBA",
       title3: "Mr Sanjeev Agarwal",
@@ -59,7 +54,7 @@ const OurTeam = () => {
               <p style={{color:'gray'}}>{item.title1}</p>
               <p style={{color:'gray'}}>{item.title2}</p>
               <p style={{color:'gray'}}>{item.title3}</p>
-              <p>{item.button}</p>
+              {/* <p>{item.button}</p> */}
             </div>
           </div>
         ))}

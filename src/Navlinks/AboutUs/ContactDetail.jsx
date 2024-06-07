@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-
+import QrCode from "../../HomePage/images/qrCode.jpg";
 const ContactDetail = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -30,8 +30,8 @@ const ContactDetail = () => {
         "https://api.prothsahanteam.org/api/contact",
         formData
       );
-      if(response.status===200){
-        toast.success("Query send successfully")
+      if (response.status === 200) {
+        toast.success("Query send successfully");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -47,9 +47,9 @@ const ContactDetail = () => {
         >
           <div className="row">
             <div className="col-md-6" style={{ lineHeight: "30px" }}>
-              <h2 style={{ color: "#00C851", marginBottom: "2rem" }}>
+              {/* <h2 style={{ color: "#00C851", marginBottom: "2rem" }}>
                 WRITE TO US
-              </h2>
+              </h2> */}
               <form onSubmit={handleSubmit} action="">
                 <div className="row">
                   <div className="col-md-6">
@@ -121,7 +121,9 @@ const ContactDetail = () => {
                         name="country"
                         onChange={getInputdata}
                       >
-                        <option value="Select a Country">Select a Country</option>
+                        <option value="Select a Country">
+                          Select a Country
+                        </option>
                         <option value="afghanistan">Afghanistan</option>
                         <option value="argentina">Argentina</option>
                         <option value="australia">Australia</option>
@@ -178,65 +180,6 @@ const ContactDetail = () => {
                   </div>
                 </div>
               </form>
-              <div className="container">
-                <hr />
-                <h1 style={{ color: "#00C851", marginBottom: "2rem" }}>
-                  <u>Our Banker Detail</u>
-                </h1>
-                <div className="row">
-                  <div className="col-md-4">
-                    <p>Name:</p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>Prothsahan team</p>
-                  </div>
-                  <div className="col-md-4">
-                    <p>Bank:</p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>Union Bank of India</p>
-                  </div>
-                  <div className="col-md-4">
-                    <p>Branch:</p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>Dilshad Garden, Delhi</p>
-                  </div>
-                 <div className="col-md-4">
-                    <p>Account no : </p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>520101254977622</p>
-                  </div>
-                  <div className="col-md-4">
-                    <p>Account Type: </p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>SB</p>
-                  </div>
-                  <div className="col-md-4">
-                    <p>IFSC CODE:</p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>UBIN0904635</p>
-                  </div>
-                  <div className="col-md-4">
-                    <p>MICR CODE:</p>
-                  </div>
-                  <div className="col-md-8">
-                    <p>110026331</p>
-                  </div>
-                  <p>
-                    <b> All donations are Tax exempted u/s 80g</b>
-                  </p>
-                  <div className="col-md-2">
-                    <p>E-mail: </p>
-                  </div>
-                  <div className="col-md-10">
-                    <p>info@prothsahanteam.org | prothsahanteam@gmail.com</p>
-                  </div>
-                </div>
-              </div>
             </div>
             <div
               className="col-md-6"
