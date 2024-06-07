@@ -308,7 +308,7 @@ const EmployeeDetail = () => {
                       type="text"
                       className="form-control"
                       id="empemail"
-                      placeholder="Email ID"
+                      placeholder="Contact No"
                       name="empnumber"
                       value={filldata.empnumber}
                       onChange={getInputData}
