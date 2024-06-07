@@ -157,7 +157,7 @@ const EmployeeDetail = () => {
               <h5 className="mt-5 mb-5"><b> Please Provide Your Detail. </b></h5>
               <form onSubmit={sendDataEmp}>
                 <div className="row">
-                  <div className="col-md-6">
+                  {/* <div className="col-md-6">
                     <label htmlFor="jobpost" className="form-label">Job Post</label>
                     <input
                       type="text"
@@ -266,7 +266,7 @@ const EmployeeDetail = () => {
                       value={filldata.email}
                       readOnly
                     />
-                  </div>
+                  </div> */}
                   <div className="col-md-6">
                     <label
                       htmlFor="empname"
