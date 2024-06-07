@@ -8,7 +8,8 @@ const Volunteer = () => {
     firstName: "",
     lastName: "",
     dob: "",
-    panNo: "",
+    qualification: "",
+    collegename:"",
     email: "",
     mobile: "",
     address: "",
@@ -43,7 +44,7 @@ const Volunteer = () => {
         "https://api.prothsahanteam.org/api/join",
         data
       );
-      if (res.status===200) {
+      if (res.status === 200) {
         toast.success("Form Submited Successfully");
       }
       console.log(res);
@@ -110,7 +111,7 @@ const Volunteer = () => {
                 </div>
               </div>
 
-              <div className="col-md-6">
+              <div className="col-md-4">
                 <div className="row">
                   <label htmlFor="">Date Of Birth</label>
                   <div className="col-md-12">
@@ -123,15 +124,27 @@ const Volunteer = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
-                <label htmlFor="">PAN No.</label>
+              <div className="col-md-4">
+                <label htmlFor="">Highest Qualification</label>
                 <div>
                   <input
                     onChange={handleChange}
-                    name="panNo"
+                    name="qualification"
                     style={{ width: "100%" }}
-                    type="number"
-                    placeholder="000 000 0000"
+                    type="text"
+                    placeholder="Qualification"
+                  />
+                </div>
+              </div>
+              <div className="col-md-4">
+                <label htmlFor="">College/Institute Name</label>
+                <div>
+                  <input
+                    onChange={handleChange}
+                    name="collegename"
+                    style={{ width: "100%" }}
+                    type="text"
+                    placeholder="College/Institute Name"
                   />
                 </div>
               </div>

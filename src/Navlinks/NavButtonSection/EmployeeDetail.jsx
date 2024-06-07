@@ -157,120 +157,9 @@ const EmployeeDetail = () => {
              
               <form onSubmit={sendDataEmp}>
                 <div className="row">
+                <h5 className="mt-5 mb-5"><b> Please Provide Your Detail. </b></h5>
                   <div className="col-md-6">
-                    {/* <label htmlFor="jobpost" className="form-label">Job Post</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="jobpost"
-                      name="jobpost"
-                      value={filldata.jobpost}
-                      readOnly
-                    />
-                    <label htmlFor="qualification" className="form-label">Qualification</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="qualification"
-                      name="qualification"
-                      value={filldata.qualification}
-                      readOnly
-                    />
-                    <label htmlFor="experience" className="form-label">Experience</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="experience"
-                      name="experience"
-                      value={filldata.experience}
-                      readOnly
-                    />
-                    <label htmlFor="packageanual" className="form-label">Package Anual</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="packageanual"
-                      name="packageanual"
-                      value={filldata.packageanual}
-                      readOnly
-                    />
-                    <label htmlFor="organisationname" className="form-label">Organisation Name</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="organisationname"
-                      name="organisationname"
-                      value={filldata.organisationname}
-                      readOnly
-                    />
-                    <label htmlFor="address" className="form-label">Address</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="address"
-                      name="address"
-                      value={filldata.address}
-                      readOnly
-                    />
-                    <label htmlFor="state" className="form-label">State</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="state"
-                      name="state"
-                      value={filldata.state}
-                      readOnly
-                    />
-                    <label htmlFor="city" className="form-label">City</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="city"
-                      name="city"
-                      value={filldata.city}
-                      readOnly
-                    />
-                    <label htmlFor="pincode" className="form-label">Pincode</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="pincode"
-                      name="pincode"
-                      value={filldata.pincode}
-                      readOnly
-                    />
-                    <label htmlFor="contact" className="form-label">Contact</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="contact"
-                      name="contact"
-                      value={filldata.contact}
-                      readOnly
-                    />
-                    <label htmlFor="mobile" className="form-label">Mobile</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="mobile"
-                      name="mobile"
-                      value={filldata.mobile}
-                      readOnly
-                    />
-                    <label htmlFor="email" className="form-label">Email</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="email"
-                      name="email"
-                      value={filldata.email}
-                      readOnly
-                    /> */}
-                  </div>
-                  
-                  <div className="col-md-6">
-                  <h5 className="mt-5 mb-5"><b> Please Provide Your Detail. </b></h5>
-                    <label
+                  <label
                       htmlFor="empname"
                       className="form-label"
                     >
@@ -300,6 +189,10 @@ const EmployeeDetail = () => {
                       value={filldata.empemail}
                       onChange={getInputData}
                     />
+                  </div>
+                  
+                  <div className="col-md-6">
+                
                       <label
                       htmlFor="empemail"
                       className="form-label"
@@ -315,18 +208,19 @@ const EmployeeDetail = () => {
                       value={filldata.empnumber}
                       onChange={getInputData}
                     />
-                    <div className="mt-3">
-                      <p>Resume: Please Upload PDF Only</p>
-                    </div>
                     <div>
+                      <label htmlFor="">Resume</label>
                       <input
-                        className="form-control"
+                        className="form-control mt-2"
                         type="file"
                         id="formFile"
                         accept="application/pdf"
                         name="resume"
                         onChange={getFiledata}
                       />
+                      <div className="mt-1">
+                      <p>Resume: Please Upload PDF Only</p>
+                    </div>
                       <div className="d-flex justify-content-center">
                         <button className="btn btn-success mt-3">
                           Apply Online
